@@ -145,11 +145,11 @@ export default function Home() {
                 Full Stack Developer with 3+ years of experience in Django, React, and AWS. Expertise in building scalable applications, optimizing performance, and integrating APIs for industrial and healthcare solutions. Passionate about writing clean, efficient code and collaborating with cross-functional teams to drive innovation.
               </p>
               <p className={aboutStyles.introParagraph}>
-                I believe that development is about more than just writing code – it's about solving problems and 
+                I believe that development is about more than just writing code – it&apos;s about solving problems and 
                 creating efficient, scalable solutions for users.
               </p>
               <p className={aboutStyles.introParagraph}>
-                Whether I'm working on a web application, ERP system, or 
+                Whether I&apos;m working on a web application, ERP system, or 
                 other digital product, I bring my commitment to code excellence and performance optimization to 
                 every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.
               </p>
