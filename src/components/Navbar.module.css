@@ -1,0 +1,150 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(var(--bg-primary), 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(var(--text-primary), 0.1);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: rgb(var(--text-primary));
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: rgb(var(--accent));
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(var(--text-primary));
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(var(--text-primary));
+  border-radius: 8px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  color: rgb(var(--text-primary));
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Ensure Gmail icon is visible in both themes */
+.icon img[alt="Gmail"] {
+  filter: none;
+}
+
+[data-theme="dark"] .icon img[alt="Gmail"] {
+  filter: brightness(0) invert(1);
+}
+
+[data-theme="light"] .icon img[alt="Gmail"] {
+  filter: brightness(0);
+}
+
+/* Ensure GitHub icon is visible in both themes */
+.icon img[alt="GitHub"] {
+  filter: none;
+}
+
+[data-theme="dark"] .icon img[alt="GitHub"] {
+  filter: brightness(0) invert(1);
+}
+
+[data-theme="light"] .icon img[alt="GitHub"] {
+  filter: brightness(0);
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  color: rgb(var(--text-primary));
+}
+
+.themeToggle:hover {
+  transform: scale(1.1);
+}
+
+.themeToggle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Ensure icon is visible in dark mode - invert to white */
+[data-theme="dark"] .themeToggle img {
+  filter: brightness(0) invert(1);
+}
+
+/* Ensure icon is visible in light mode - make it black */
+[data-theme="light"] .themeToggle img {
+  filter: brightness(0);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem;
+  }
+  
+  .navLinks {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .socialIcons {
+    gap: 0.5rem;
+  }
+}

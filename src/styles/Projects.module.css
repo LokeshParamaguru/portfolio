@@ -1,0 +1,119 @@
+.projects {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  background: rgb(var(--bg-primary));
+  color: rgb(var(--text-primary));
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: rgb(var(--text-primary));
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+}
+
+.projectCard {
+  background: rgba(var(--text-primary), 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(var(--text-primary), 0.1);
+}
+
+.projectCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.1);
+}
+
+.projectInfo {
+  padding: 2rem;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: rgb(var(--text-primary));
+}
+
+.projectDescription {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgb(var(--text-secondary));
+  margin-bottom: 1.5rem;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgb(var(--accent));
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.projectLink:hover {
+  gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 6rem 1rem 2rem;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .projectInfo {
+    padding: 1.5rem;
+  }
+}
