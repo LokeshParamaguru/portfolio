@@ -5,6 +5,7 @@ import styles from './Navbar.module.css'
 const Navbar = () => {
   const [theme, setTheme] = useState('light')
   const [mounted, setMounted] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -18,6 +19,10 @@ const Navbar = () => {
     setTheme(newTheme)
     localStorage.setItem('theme', newTheme)
     document.documentElement.setAttribute('data-theme', newTheme)
+  }
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
   }
 
   const handleNavClick = (e, targetId) => {
@@ -36,17 +41,37 @@ const Navbar = () => {
     }
   }
 
+  const handleNavClickWithClose = (e, targetId) => {
+    handleNavClick(e, targetId)
+    setMobileMenuOpen(false)
+  }
+
   return (
     <header className={styles.navbar}>
       <nav className={styles.nav}>
-        <div className={styles.navLinks}>
-          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className={styles.navLink}>Home</a>
-          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className={styles.navLink}>About</a>
-          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className={styles.navLink}>Projects</a>
-          <a href="#articles" onClick={(e) => handleNavClick(e, 'articles')} className={styles.navLink}>Articles</a>
-        </div>
-        <div className={styles.navRight}>
+        <div className={styles.navLeft}>
           <div className={styles.logo}>LP</div>
+          <button 
+            className={styles.mobileMenuButton}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            <span className={`${styles.hamburger} ${mobileMenuOpen ? styles.hamburgerOpen : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+        
+        <div className={`${styles.navLinks} ${mobileMenuOpen ? styles.navLinksOpen : ''}`}>
+          <a href="#home" onClick={(e) => handleNavClickWithClose(e, 'home')} className={styles.navLink}>Home</a>
+          <a href="#about" onClick={(e) => handleNavClickWithClose(e, 'about')} className={styles.navLink}>About</a>
+          <a href="#projects" onClick={(e) => handleNavClickWithClose(e, 'projects')} className={styles.navLink}>Projects</a>
+          <a href="#technologies" onClick={(e) => handleNavClickWithClose(e, 'technologies')} className={styles.navLink}>Technologies</a>
+        </div>
+        
+        <div className={`${styles.navRight} ${mobileMenuOpen ? styles.navRightOpen : ''}`}>
           <div className={styles.socialIcons}>
             <a href="https://linkedin.com/in/lokesh0703" target="_blank" rel="noopener noreferrer" className={styles.icon}>
               <Image src="/images/svgs/linkedin.svg" alt="LinkedIn" width={24} height={24} />

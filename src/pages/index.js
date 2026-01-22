@@ -6,7 +6,7 @@ import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
 import aboutStyles from '@/styles/About.module.css'
 import projectsStyles from '@/styles/Projects.module.css'
-import articlesStyles from '@/styles/Articles.module.css'
+import technologiesStyles from '@/styles/Technologies.module.css'
 
 export default function Home() {
   const experiences = [
@@ -53,85 +53,69 @@ export default function Home() {
     {
       title: 'Industrial Asset Data Acquisition & Integration',
       description: 'Developed a React-Django system for real-time data acquisition from industrial assets, including energy meters, sensors, and IoT devices. Users provide IP and Port, allowing dynamic connections via Python-based connectors. Supports MQTT, OPC UA, and Modbus for seamless integration.',
-      image: '/images/projects/crypto-screener-cover-image.jpg',
+      image: '/images/projects/crypto-screener-cover-image.png',
       link: '#'
     },
     {
       title: 'Company Registration and Landing Page Management',
       description: 'Developed a web-based system for company registration and landing page management. The platform allows businesses to register, submit branding details, and get a dedicated landing page upon admin approval.',
       image: '/images/projects/portfolio-cover-image.jpg',
-      link: '#'
+      link: 'https://pngmeetup.com/'
     },
     {
       title: 'Automated Report Generation and Data Visualization for OTRS',
       description: 'Built a Django-based web application to automate report generation for OTRS, improving efficiency through an interactive dashboard and data visualization. Reduced manual effort by 90%, enabling managers to focus on decision-making.',
-      image: '/images/projects/nft-collection-website-cover-image.jpg',
+      image: '/images/projects/otrs.png',
       link: '#'
     },
     {
       title: 'Customer EPO Analysis and Visualization',
       description: 'Enhanced data analytics platform to analyze customer EPO data, detect anomalies, and visualize trends. Implemented interactive dashboards for real-time monitoring using Dash & Plotly.',
-      image: '/images/projects/agency-website-cover-image.jpg',
+      image: '/images/projects/EPO.png',
       link: '#'
     }
   ]
 
-  const articles = [
+  const technologies = [
     {
-      title: 'Build A Custom Pagination Component In Reactjs From Scratch',
-      description: 'Learn how to build a custom pagination component in ReactJS from scratch. Follow this step-by-step guide to integrate Pagination component in your ReactJS project.',
-      readTime: '9 min read',
-      image: '/images/articles/pagination component in reactjs.jpg',
-      link: '#'
+      category: 'Frontend',
+      techs: [
+        { name: 'React', icon: '⚛️' },
+        { name: 'Next.js', icon: '▲' },
+        { name: 'JavaScript', icon: '📜' },
+        { name: 'HTML', icon: '🌐' },
+        { name: 'CSS', icon: '🎨' }
+      ]
     },
     {
-      title: 'Creating Stunning Loading Screens In React: Build 3 Types Of Loading Screens',
-      description: 'Learn how to create stunning loading screens in React with 3 different methods. Discover how to use React-Loading, React-Lottie & build a custom loading screen. Improve the user experience.',
-      readTime: '10 min read',
-      image: '/images/articles/create loading screen in react js.jpg',
-      link: '#'
+      category: 'Backend',
+      techs: [
+        { name: 'Django', icon: '🐍' },
+        { name: 'Node.js', icon: '🟢' },
+        { name: 'Python', icon: '🐍' },
+        { name: 'REST APIs', icon: '🔌' }
+      ]
     },
     {
-      title: 'Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling',
-      description: 'Learn how to build a reusable custom hook for form validation in ReactJS. Handle inputs and errors efficiently with this comprehensive guide.',
-      readTime: '8 min read',
-      image: '/images/articles/form validation in reactjs using custom react hook.png',
-      link: '#'
+      category: 'Database',
+      techs: [
+        { name: 'MySQL', icon: '🗄️' },
+        { name: 'PostgreSQL', icon: '🐘' },
+        { name: 'MongoDB', icon: '🍃' }
+      ]
     },
     {
-      title: 'Silky Smooth Scrolling In Reactjs: A Step-By-Step Guide For React Developers',
-      description: 'Master the art of smooth scrolling in ReactJS. Learn step-by-step techniques to create seamless scrolling experiences in your React applications.',
-      readTime: '7 min read',
-      image: '/images/articles/smooth scrolling in reactjs.png',
-      link: '#'
+      category: 'Cloud & DevOps',
+      techs: [
+        { name: 'AWS', icon: '☁️' },
+        { name: 'Git', icon: '📦' }
+      ]
     },
     {
-      title: 'Creating An Efficient Modal Component In React Using Hooks And Portals',
-      description: 'Learn how to create an efficient modal component in React using hooks and portals. Build reusable modals with proper accessibility and performance.',
-      readTime: '9 min read',
-      image: '/images/articles/create modal component in react using react portals.png',
-      link: '#'
-    },
-    {
-      title: 'Build A Fabulous Todo List App With React, Redux And Framer-Motion',
-      description: 'Create a beautiful and functional todo list app using React, Redux for state management, and Framer Motion for smooth animations.',
-      readTime: '12 min read',
-      image: '/images/articles/todo list app built using react redux and framer motion.png',
-      link: '#'
-    },
-    {
-      title: 'Redux Simplified: A Beginner\'s Guide For Web Developers',
-      description: 'A comprehensive beginner\'s guide to Redux. Learn the fundamentals of state management with Redux in a simple and easy-to-understand way.',
-      readTime: '11 min read',
-      image: '/images/articles/What is Redux with easy explanation.png',
-      link: '#'
-    },
-    {
-      title: 'What Is Higher Order Component (Hoc) In React?',
-      description: 'Understand Higher Order Components (HOC) in React. Learn how to use HOCs to enhance component functionality and reuse code effectively.',
-      readTime: '6 min read',
-      image: '/images/articles/What is higher order component in React.jpg',
-      link: '#'
+      category: 'ERP & Tools',
+      techs: [
+        { name: 'Frappe', icon: '📊' }
+      ]
     }
   ]
 
@@ -234,10 +218,17 @@ export default function Home() {
                 <div className={projectsStyles.projectInfo}>
                   <h3 className={projectsStyles.projectTitle}>{project.title}</h3>
                   <p className={projectsStyles.projectDescription}>{project.description}</p>
-                  <Link href={project.link} className={projectsStyles.projectLink}>
-                    View Project
-                    <Image src="/images/svgs/external-link.svg" alt="External link" width={20} height={20} />
-                  </Link>
+                  {project.link.startsWith('http') ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className={projectsStyles.projectLink}>
+                      View Project
+                      <Image src="/images/svgs/external-link.svg" alt="External link" width={20} height={20} />
+                    </a>
+                  ) : (
+                    <Link href={project.link} className={projectsStyles.projectLink}>
+                      View Project
+                      <Image src="/images/svgs/external-link.svg" alt="External link" width={20} height={20} />
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
@@ -245,34 +236,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Articles Section */}
-      <section id="articles" className={articlesStyles.articles}>
-        <div className={articlesStyles.container}>
-          <h1 className={articlesStyles.heading}>Words Can Change The World!</h1>
+      {/* Technologies Section */}
+      <section id="technologies" className={technologiesStyles.technologies}>
+        <div className={technologiesStyles.container}>
+          <h1 className={technologiesStyles.heading}>Technologies I Know</h1>
+          <p className={technologiesStyles.subheading}>A comprehensive overview of my technical expertise and tools</p>
           
-          <div className={articlesStyles.articlesGrid}>
-            {articles.map((article, index) => (
-              <Link key={index} href={article.link} className={articlesStyles.articleCard}>
-                <div className={articlesStyles.imageContainer}>
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    width={400}
-                    height={250}
-                    className={articlesStyles.articleImage}
-                  />
-                </div>
-                <div className={articlesStyles.articleInfo}>
-                  <h3 className={articlesStyles.articleTitle}>{article.title}</h3>
-                  <p className={articlesStyles.articleDescription}>{article.description}</p>
-                  <div className={articlesStyles.articleMeta}>
-                    <span className={articlesStyles.readTime}>{article.readTime}</span>
-                    <Image src="/images/svgs/external-link.svg" alt="External link" width={16} height={16} />
+          {technologies.map((category, categoryIndex) => (
+            <div key={categoryIndex} className={technologiesStyles.categorySection}>
+              <h2 className={technologiesStyles.categoryTitle}>{category.category}</h2>
+              <div className={technologiesStyles.technologiesGrid}>
+                {category.techs.map((tech, techIndex) => (
+                  <div key={techIndex} className={technologiesStyles.techBadge}>
+                    <span className={technologiesStyles.techIcon}>{tech.icon}</span>
+                    <span className={technologiesStyles.techName}>{tech.name}</span>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>

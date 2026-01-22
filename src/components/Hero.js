@@ -20,8 +20,8 @@ const Hero = () => {
               <Image
                 src="/images/circular-text.png"
                 alt="Software Developer"
-                width={150}
-                height={150}
+                width={280}
+                height={280}
                 className={styles.circularText}
               />
               <button className={styles.hireMeButton}>Hire Me</button>
@@ -36,13 +36,13 @@ const Hero = () => {
             Full Stack Developer with 4+ years of experience in Django, React, and AWS. Expertise in building scalable applications, optimizing performance, and integrating APIs for industrial and healthcare solutions. Explore my latest projects showcasing my expertise in full-stack development.
           </p>
           <div className={styles.ctaButtons}>
-            <a href="/dummy.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeButton}>
+            <a href="/Lokesh_Resume_2025.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeButton}>
               Resume
               <Image src="/images/svgs/external-link.svg" alt="External link" width={20} height={20} />
             </a>
-            <Link href="/contact" className={styles.contactButton}>
+            <a href="tel:+918072876011" className={styles.contactButton}>
               Contact
-            </Link>
+            </a>
           </div>
           <div className={styles.lightbulb}>
             <Image

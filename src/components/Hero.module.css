@@ -38,10 +38,10 @@
 
 .circularTextContainer {
   position: absolute;
-  bottom: -80px;
-  left: -80px;
-  width: 200px;
-  height: 200px;
+  bottom: -100px;
+  left: -100px;
+  width: 280px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,9 +224,9 @@
   }
   
   .circularTextContainer {
-    width: 150px;
-    height: 150px;
-    bottom: -50px;
-    left: -50px;
+    width: 200px;
+    height: 200px;
+    bottom: -60px;
+    left: -60px;
   }
 }
