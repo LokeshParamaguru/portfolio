@@ -142,7 +142,7 @@ export default function Home() {
           <div className={aboutStyles.introSection}>
             <div className={aboutStyles.introText}>
               <p className={aboutStyles.introParagraph}>
-                Full Stack Developer with 3+ years of experience in Django, React, and AWS. Expertise in building scalable applications, optimizing performance, and integrating APIs for industrial and healthcare solutions. Passionate about writing clean, efficient code and collaborating with cross-functional teams to drive innovation.
+                Full Stack Developer with 4+ years of experience in Django, React, and AWS. Expertise in building scalable applications, optimizing performance, and integrating APIs for industrial and healthcare solutions. Passionate about writing clean, efficient code and collaborating with cross-functional teams to drive innovation.
               </p>
               <p className={aboutStyles.introParagraph}>
                 I believe that development is about more than just writing code – it&apos;s about solving problems and 
