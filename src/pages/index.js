@@ -51,6 +51,12 @@ export default function Home() {
 
   const projects = [
     {
+      title: 'NaRDil AI - AI-Powered Construction Drawing Analysis Platform',
+      description: 'Built a full-stack construction management platform with ML-driven drawing analysis. Used Google Cloud Vertex AI to extract structured data from construction plans. Developed a scalable FastAPI backend with PostgreSQL, REST APIs, and WebSockets. Implemented real-time collaboration and document storage using Google Cloud services. Created a Next.js + TypeScript frontend with live annotations and measurement tools. Added RBAC, Firebase authentication, project management, and data visualization.',
+      image: '/images/projects/nft-collection-website-cover-image.jpg',
+      link: '#'
+    },
+    {
       title: 'Industrial Asset Data Acquisition & Integration',
       description: 'Developed a React-Django system for real-time data acquisition from industrial assets, including energy meters, sensors, and IoT devices. Users provide IP and Port, allowing dynamic connections via Python-based connectors. Supports MQTT, OPC UA, and Modbus for seamless integration.',
       image: '/images/projects/crypto-screener-cover-image.png',
